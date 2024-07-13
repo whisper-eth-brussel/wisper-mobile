@@ -1,6 +1,7 @@
 import BackButton from "@/components/common/BackButton";
 import { Loading } from "@/components/common/Loading";
 import FlipCam from "@/components/Scan/FlipCam";
+import { useNavigation } from "@react-navigation/native";
 import { CameraType, CameraView, useCameraPermissions } from "expo-camera";
 import { useState } from "react";
 import { Button, StyleSheet, Text, TouchableOpacity, View } from "react-native";
@@ -13,6 +14,8 @@ export default function App() {
   const [facing, setFacing] = useState<CameraType>("back");
   const [isGroupQr, setIsGroupQr] = useState<boolean>(false);
   const [permission, requestPermission] = useCameraPermissions();
+
+  const navigation = useNavigation<any>();
 
   if (!permission) {
     // Camera permissions are still loading.
@@ -55,6 +58,7 @@ export default function App() {
           const promise = new Promise((resolve) => {
             setTimeout(() => {
               setIsGroupQr(false);
+              navigation.navigate("Join", {});
             }, 2000);
           });
         }}

@@ -19,6 +19,7 @@ import ChatyScreen from "@/screens/ChatyScreen";
 import CreateScreen from "@/screens/CreateScreen";
 import ScanScreen from "@/screens/ScanScreen";
 import ChatScreen from "@/screens/ChatScreen";
+import JoinGroupScreen from "@/screens/JoinGroupScreen";
 
 // Prevent the splash screen from auto-hiding before asset loading is complete.
 SplashScreen.preventAutoHideAsync();
@@ -60,6 +61,7 @@ export default function RootLayout() {
               <Stack.Screen name="Scan" component={ScanScreen} />
               <Stack.Screen name="Chaty" component={ChatyScreen} />
               <Stack.Screen name="Chat" component={ChatScreen} />
+              <Stack.Screen name="Join" component={JoinGroupScreen} />
             </Stack.Navigator>
           </KeyboardAvoidingView>
         </SafeAreaProvider>
