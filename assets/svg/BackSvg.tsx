@@ -3,7 +3,7 @@ import Svg, { SvgProps, Path } from "react-native-svg";
 export const BackSvg = (props: SvgProps) => (
   <Svg width={12} height={20} fill="none" {...props}>
     <Path
-      stroke="#DBC9FF"
+      stroke={props.stroke}
       strokeLinecap="round"
       strokeLinejoin="round"
       strokeWidth={3}

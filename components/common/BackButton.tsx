@@ -3,7 +3,7 @@ import React from "react";
 import { BackSvg } from "@/assets/svg/BackSvg";
 import { useNavigation } from "@react-navigation/native";
 
-const BackButton = () => {
+const BackButton = ({ iconColor }: { iconColor?: string }) => {
   const navigation = useNavigation();
 
   return (
@@ -15,7 +15,7 @@ const BackButton = () => {
         alignItems: "center",
       }}
     >
-      <BackSvg />
+      <BackSvg stroke={iconColor ? iconColor : "#111827"} />
     </TouchableOpacity>
   );
 };

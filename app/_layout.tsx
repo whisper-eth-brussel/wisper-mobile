@@ -18,6 +18,7 @@ import HomeScreen from "@/screens/HomeScreen";
 import ChatyScreen from "@/screens/ChatyScreen";
 import CreateScreen from "@/screens/CreateScreen";
 import ScanScreen from "@/screens/ScanScreen";
+import ChatScreen from "@/screens/ChatScreen";
 
 // Prevent the splash screen from auto-hiding before asset loading is complete.
 SplashScreen.preventAutoHideAsync();
@@ -49,35 +50,16 @@ export default function RootLayout() {
             behavior={Platform.OS === "ios" ? "padding" : "height"}
             keyboardVerticalOffset={Platform.OS === "ios" ? -64 : 0}
           >
-            <Stack.Navigator>
-              <Stack.Screen
-                name="Home"
-                component={HomeScreen}
-                options={{
-                  headerShown: false,
-                }}
-              />
-              <Stack.Screen
-                name="Create"
-                component={CreateScreen}
-                options={{
-                  headerShown: false,
-                }}
-              />
-              <Stack.Screen
-                name="Scan"
-                component={ScanScreen}
-                options={{
-                  headerShown: false,
-                }}
-              />
-              <Stack.Screen
-                name="Chaty"
-                component={ChatyScreen}
-                options={{
-                  headerShown: false,
-                }}
-              />
+            <Stack.Navigator
+              screenOptions={{
+                headerShown: false,
+              }}
+            >
+              <Stack.Screen name="Home" component={HomeScreen} />
+              <Stack.Screen name="Create" component={CreateScreen} />
+              <Stack.Screen name="Scan" component={ScanScreen} />
+              <Stack.Screen name="Chaty" component={ChatyScreen} />
+              <Stack.Screen name="Chat" component={ChatScreen} />
             </Stack.Navigator>
           </KeyboardAvoidingView>
         </SafeAreaProvider>

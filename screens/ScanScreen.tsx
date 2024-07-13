@@ -60,7 +60,7 @@ export default function App() {
         }}
       >
         <View style={[styles.buttonContainer, tw`px-3 py-4`]}>
-          <BackButton />
+          <BackButton iconColor="#DBC9FF" />
           <FlipCam toggleCameraFacing={toggleCameraFacing} />
         </View>
         <View style={styles.overlay}>

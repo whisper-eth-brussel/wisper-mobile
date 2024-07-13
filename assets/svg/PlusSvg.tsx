@@ -3,7 +3,7 @@ import Svg, { SvgProps, G, Path, Defs, ClipPath } from "react-native-svg";
 export const PlusSvg = (props: SvgProps) => (
   <Svg width={26} height={26} fill="none" {...props}>
     <G
-      stroke="#24252A"
+      stroke={props.stroke || "#24252A"}
       strokeLinecap="round"
       strokeLinejoin="round"
       strokeWidth={3}
