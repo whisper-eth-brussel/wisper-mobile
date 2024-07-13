@@ -16,6 +16,10 @@ import { KeyboardAvoidingView, Platform } from "react-native";
 import { createStackNavigator } from "@react-navigation/stack";
 import HomeScreen from "@/screens/HomeScreen";
 import ChatyScreen from "@/screens/ChatyScreen";
+import CreateScreen from "@/screens/CreateScreen";
+import ScanScreen from "@/screens/ScanScreen";
+import ChatScreen from "@/screens/ChatScreen";
+import JoinGroupScreen from "@/screens/JoinGroupScreen";
 
 // Prevent the splash screen from auto-hiding before asset loading is complete.
 SplashScreen.preventAutoHideAsync();
@@ -25,7 +29,7 @@ export default function RootLayout() {
 
   const colorScheme = useColorScheme();
   const [loaded] = useFonts({
-    SpaceMono: require("../assets/fonts/SpaceMono-Regular.ttf"),
+    SpaceMono: require("../assets/fonts/Sora.ttf"),
   });
 
   useEffect(() => {
@@ -45,23 +49,19 @@ export default function RootLayout() {
           <KeyboardAvoidingView
             style={{ flex: 1 }}
             behavior={Platform.OS === "ios" ? "padding" : "height"}
-            keyboardVerticalOffset={Platform.OS === "ios" ? -64 : 0}
+            keyboardVerticalOffset={Platform.OS === "ios" ? -24 : 0}
           >
-            <Stack.Navigator>
-              <Stack.Screen
-                name="Home"
-                component={HomeScreen}
-                options={{
-                  headerShown: false,
-                }}
-              />
-              <Stack.Screen
-                name="Chaty"
-                component={ChatyScreen}
-                options={{
-                  headerShown: false,
-                }}
-              />
+            <Stack.Navigator
+              screenOptions={{
+                headerShown: false,
+              }}
+            >
+              <Stack.Screen name="Home" component={HomeScreen} />
+              <Stack.Screen name="Create" component={CreateScreen} />
+              <Stack.Screen name="Scan" component={ScanScreen} />
+              <Stack.Screen name="Chaty" component={ChatyScreen} />
+              <Stack.Screen name="Chat" component={ChatScreen} />
+              <Stack.Screen name="Join" component={JoinGroupScreen} />
             </Stack.Navigator>
           </KeyboardAvoidingView>
         </SafeAreaProvider>
