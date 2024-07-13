@@ -57,8 +57,8 @@ const ChatScreen = ({ route }: { route: any }) => {
     ]);
   };
   return (
-    <SafeAreaView style={styles.container}>
-      <View style={styles.header}>
+    <View style={styles.container}>
+      <SafeAreaView edges={["top", "left", "right"]} style={styles.header}>
         <View style={styles.headerBox}>
           <BackButton iconColor="#111827" />
           <View style={styles.headerBox}>
@@ -74,8 +74,9 @@ const ChatScreen = ({ route }: { route: any }) => {
         <TouchableOpacity onPress={() => navigation.navigate("Scan")}>
           <ScanSvg />
         </TouchableOpacity>
-      </View>
-      <View
+      </SafeAreaView>
+      <SafeAreaView
+        edges={["bottom", "left", "right"]}
         style={{
           flex: 1,
           paddingLeft: 32,
@@ -100,9 +101,9 @@ const ChatScreen = ({ route }: { route: any }) => {
             )
           }
         />
-      </View>
+      </SafeAreaView>
       <BottomSend sendMessage={sendMessage} />
-    </SafeAreaView>
+    </View>
   );
 };
 

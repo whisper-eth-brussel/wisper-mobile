@@ -43,70 +43,74 @@ const JoinGroupScreen = () => {
     ],
   };
   return (
-    <SafeAreaView
+    <View
       style={{
-        height: "100%",
+        flex: 1,
         backgroundColor: "white",
+        position: "relative",
       }}
     >
-      <View
-        style={{
-          alignItems: "flex-start",
-          paddingLeft: 12,
-          marginTop: 16,
-          width: "100%",
-        }}
-      >
-        <BackButton />
-      </View>
-      <View
-        style={{
-          gap: 12,
-          alignItems: "center",
-          justifyContent: "center",
-        }}
-      >
-        <Image
-          source={{
-            uri: group.thumbnail,
-          }}
-          style={{
-            width: 100,
-            height: 100,
-            borderRadius: 9999,
-            borderColor: "#DBC9FF",
-            borderWidth: 3,
-          }}
-        />
+      <SafeAreaView>
         <View
           style={{
-            alignItems: "center",
-            justifyContent: "center",
-            gap: 4,
+            alignItems: "flex-start",
+            paddingLeft: 12,
+            marginTop: 16,
+            width: "100%",
           }}
         >
-          <Text
-            style={{
-              fontSize: 24,
-              fontWeight: "bold",
-              fontFamily: "Sora",
-              color: "#111827",
-            }}
-          >
-            {group.name}
-          </Text>
-          <Text
-            style={{
-              fontSize: 12,
-              fontWeight: "light",
-              fontFamily: "Sora",
-              color: "#111827",
-            }}
-          >
-            {group.member} member
-          </Text>
+          <BackButton />
         </View>
-      </View>
+        <View
+          style={{
+            gap: 12,
+            alignItems: "center",
+            justifyContent: "center",
+          }}
+        >
+          <Image
+            source={{
+              uri: group.thumbnail,
+            }}
+            style={{
+              width: 100,
+              height: 100,
+              borderRadius: 9999,
+              borderColor: "#DBC9FF",
+              borderWidth: 3,
+            }}
+          />
+          <View
+            style={{
+              alignItems: "center",
+              justifyContent: "center",
+              gap: 4,
+            }}
+          >
+            <Text
+              style={{
+                fontSize: 24,
+                fontWeight: "bold",
+                fontFamily: "Sora",
+                color: "#111827",
+              }}
+            >
+              {group.name}
+            </Text>
+            <Text
+              style={{
+                fontSize: 12,
+                fontWeight: "light",
+                fontFamily: "Sora",
+                color: "#111827",
+              }}
+            >
+              {group.member} member
+            </Text>
+          </View>
+        </View>
+      </SafeAreaView>
+
       <View
         style={{
           flex: 1,
@@ -169,7 +173,7 @@ const JoinGroupScreen = () => {
       <View
         style={{
           position: "absolute",
-          bottom: "10%",
+          bottom: "5%",
           left: 16,
           right: 16,
         }}
@@ -194,10 +198,13 @@ const JoinGroupScreen = () => {
             style={[
               {
                 color: "#fff",
+                fontSize: 16,
+                fontWeight: "bold",
+                fontFamily: "Sora",
               },
             ]}
           >
-            Scan QR
+            Join group
           </Text>
           <View
             style={{
@@ -212,7 +219,7 @@ const JoinGroupScreen = () => {
           </View>
         </TouchableOpacity>
       </View>
-    </SafeAreaView>
+    </View>
   );
 };
 

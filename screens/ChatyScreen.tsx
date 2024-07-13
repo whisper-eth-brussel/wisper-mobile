@@ -43,14 +43,17 @@ const ChatyScreen = () => {
   const navigation = useNavigation<any>();
 
   return (
-    <SafeAreaView style={styles.container}>
-      <View style={styles.header}>
+    <View style={styles.container}>
+      <SafeAreaView edges={["top", "left", "right"]} style={styles.header}>
         <Text style={styles.headerText}>Chaty</Text>
         <TouchableOpacity onPress={() => navigation.navigate("Create")}>
           <PlusSvg />
         </TouchableOpacity>
-      </View>
-      <View style={styles.groupContainer}>
+      </SafeAreaView>
+      <SafeAreaView
+        edges={["bottom", "left", "right"]}
+        style={styles.groupContainer}
+      >
         <FlatList
           data={groups}
           keyExtractor={(item) => item.id}
@@ -105,7 +108,7 @@ const ChatyScreen = () => {
           )}
           contentContainerStyle={{ paddingBottom: 20 }}
         />
-      </View>
+      </SafeAreaView>
 
       <View
         style={{
@@ -130,7 +133,7 @@ const ChatyScreen = () => {
           </Text>
         </TouchableOpacity>
       </View>
-    </SafeAreaView>
+    </View>
   );
 };
 

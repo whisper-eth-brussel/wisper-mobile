@@ -11,6 +11,7 @@ import { PaperSvg } from "@/assets/svg/PaperSvg";
 import { VoiceSvg } from "@/assets/svg/VoiceSvg";
 import tw from "tailwind-react-native-classnames";
 import { UpArrow } from "@/assets/svg/UpArrow";
+import { SafeAreaView } from "react-native-safe-area-context";
 
 export const BottomSend = ({
   sendMessage,
@@ -20,7 +21,7 @@ export const BottomSend = ({
   const [value, onChangeText] = useState<string>("");
   console.log(value);
   return (
-    <View style={styles.container}>
+    <SafeAreaView edges={["bottom", "left", "right"]} style={styles.container}>
       <View style={styles.inputContainer}>
         <TouchableOpacity
           onPress={() => onChangeText("")}
@@ -78,7 +79,7 @@ export const BottomSend = ({
       >
         <UpArrow />
       </TouchableOpacity>
-    </View>
+    </SafeAreaView>
   );
 };
 
@@ -91,6 +92,7 @@ const styles = StyleSheet.create({
     minHeight: 48,
     alignItems: "center",
     marginTop: 8,
+    backgroundColor: "#fff",
   },
   inputContainer: {
     backgroundColor: "#F6F1FF",
