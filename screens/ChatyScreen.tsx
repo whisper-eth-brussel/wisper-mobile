@@ -114,7 +114,10 @@ const ChatyScreen = () => {
           right: 20,
         }}
       >
-        <TouchableOpacity style={styles.newGroup}>
+        <TouchableOpacity
+          onPress={() => navigation.navigate("Create")}
+          style={styles.newGroup}
+        >
           <PlusSvg stroke="#fff" />
           <Text
             style={{
