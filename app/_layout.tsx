@@ -16,6 +16,8 @@ import { KeyboardAvoidingView, Platform } from "react-native";
 import { createStackNavigator } from "@react-navigation/stack";
 import HomeScreen from "@/screens/HomeScreen";
 import ChatyScreen from "@/screens/ChatyScreen";
+import CreateScreen from "@/screens/CreateScreen";
+import ScanScreen from "@/screens/ScanScreen";
 
 // Prevent the splash screen from auto-hiding before asset loading is complete.
 SplashScreen.preventAutoHideAsync();
@@ -25,7 +27,7 @@ export default function RootLayout() {
 
   const colorScheme = useColorScheme();
   const [loaded] = useFonts({
-    SpaceMono: require("../assets/fonts/SpaceMono-Regular.ttf"),
+    SpaceMono: require("../assets/fonts/Sora.ttf"),
   });
 
   useEffect(() => {
@@ -51,6 +53,20 @@ export default function RootLayout() {
               <Stack.Screen
                 name="Home"
                 component={HomeScreen}
+                options={{
+                  headerShown: false,
+                }}
+              />
+              <Stack.Screen
+                name="Create"
+                component={CreateScreen}
+                options={{
+                  headerShown: false,
+                }}
+              />
+              <Stack.Screen
+                name="Scan"
+                component={ScanScreen}
                 options={{
                   headerShown: false,
                 }}

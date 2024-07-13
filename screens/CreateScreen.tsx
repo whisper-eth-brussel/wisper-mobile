@@ -2,16 +2,15 @@ import { Image, StyleSheet, Text, View } from "react-native";
 import React from "react";
 import { SafeAreaView } from "react-native-safe-area-context";
 import tw from "tailwind-react-native-classnames";
-import { SvgUri } from "react-native-svg";
 
-const HomeScreen = () => {
+const CreateScreen = () => {
   return (
     <SafeAreaView style={tw`bg-white h-full`}>
-      <Text>Chaty Screen</Text>
+      <Text>Create Screen</Text>
     </SafeAreaView>
   );
 };
 
-export default HomeScreen;
+export default CreateScreen;
 
 const styles = StyleSheet.create({});
